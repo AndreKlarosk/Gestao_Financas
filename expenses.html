@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinanceApp</title>
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+  <link rel="stylesheet" href="glass.css" />
+  <script type="module" src="expenses.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>FinanceApp</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="salary.html">Salário</a>
+      <a href="expenses.html">Despesas</a>
+      <a href="categories.html">Categorias</a>
+      <a href="goals.html">Metas</a>
+      <a href="reminders.html">Lembretes</a>
+      <a href="reports.html">Relatórios</a>
+      <a href="zen.html">Zen</a>
+      <a href="settings.html">Configurações</a>
+    </nav>
+  </header>
+
+  <main class="glass-box">
+    <section class="glass-box">
+      <button id="add-expense-btn">+ Nova Despesa</button>
+      <label>
+        Filtro por categoria:
+        <select id="category-filter"><option value="">Todas</option></select>
+      </label>
+      <ul id="expense-list"></ul>
+    </section>
+
+    <!-- Modal -->
+    <div id="expense-modal" class="modal" style="display: none;">
+      <form id="expense-form">
+        <input type="hidden" id="expense-id" />
+        <label>
+          Descrição:
+          <input type="text" id="expense-desc" required />
+        </label>
+        <label>
+          Valor:
+          <input type="number" id="expense-amount" required />
+        </label>
+        <label>
+          Data:
+          <input type="date" id="expense-date" required />
+        </label>
+        <label>
+          Categoria:
+          <select id="expense-category" required></select>
+        </label>
+        <label>
+          Recorrência:
+          <select id="expense-recurrence">
+            <option value="nenhuma">Nenhuma</option>
+            <option value="mensal">Mensal</option>
+            <option value="semanal">Semanal</option>
+          </select>
+        </label>
+        <button type="submit">Salvar</button>
+        <button type="button" id="cancel-expense">Cancelar</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

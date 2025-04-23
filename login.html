@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00c9ff" />
+
+  <title>Login - FinanceApp</title>
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+  <link rel="stylesheet" href="glass.css" />
+
+  <link rel="stylesheet" href="login.css" />
+  <script type="module" src="login.js" defer></script>
+</head>
+<body>
+  <main class="login-wrapper">
+    <div class="login-box">
+      <h1 class="logo">💰 FinanceApp</h1>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Usuário" value="andre.leao" required />
+        <input type="password" id="password" placeholder="Senha" value="3231" required />
+        <button type="submit">Entrar</button>
+        <p id="login-error" class="error-msg">Usuário ou senha inválidos.</p>
+      </form>      
+    </div>
+  </main>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('✅ Service Worker registrado!'))
+        .catch(err => console.error('Erro ao registrar SW:', err));
+    }
+  </script>
+  
+</body>
+</html>

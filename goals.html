@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinanceApp</title>
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+  <link rel="stylesheet" href="glass.css" />
+  <script type="module" src="goals.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>FinanceApp</h1>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+      <a href="salary.html">Salário</a>
+      <a href="expenses.html">Despesas</a>
+      <a href="categories.html">Categorias</a>
+      <a href="goals.html">Metas</a>
+      <a href="reminders.html">Lembretes</a>
+      <a href="reports.html">Relatórios</a>
+      <a href="zen.html">Zen</a>
+      <a href="settings.html">Configurações</a>
+    </nav>
+  </header>
+
+  <main class="glass-box">
+    <section class="glass-box">
+      <button id="add-goal-btn">+ Nova Meta</button>
+      <ul id="goal-list"></ul>
+    </section>
+
+    <!-- Modal -->
+    <div id="goal-modal" class="modal" style="display: none;">
+      <form id="goal-form">
+        <input type="hidden" id="goal-id" />
+        <label>
+          Categoria:
+          <select id="goal-category" required></select>
+        </label>
+        <label>
+          Valor Limite:
+          <input type="number" id="goal-limit" required />
+        </label>
+        <button type="submit">Salvar</button>
+        <button type="button" id="cancel-goal">Cancelar</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

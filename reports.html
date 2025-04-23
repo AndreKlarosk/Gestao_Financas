@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinanceApp</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00c9ff" />
+
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+  <link rel="stylesheet" href="glass.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script type="module" src="reports.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>FinanceApp</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="salary.html">Salário</a>
+      <a href="expenses.html">Despesas</a>
+      <a href="categories.html">Categorias</a>
+      <a href="goals.html">Metas</a>
+      <a href="reminders.html">Lembretes</a>
+      <a href="reports.html">Relatórios</a>
+      <a href="zen.html">Zen</a>
+      <a href="settings.html">Configurações</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Resumo Mensal</h2>
+      <canvas id="monthly-chart" width="600" height="300"></canvas>
+      <button id="export-btn">📄 Exportar CSV</button>
+    </section>
+  </main>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('✅ Service Worker registrado!'))
+        .catch(err => console.error('Erro ao registrar SW:', err));
+    }
+  </script>
+  
+</body>
+</html>
